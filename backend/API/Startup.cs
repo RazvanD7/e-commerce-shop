@@ -1,4 +1,5 @@
-﻿using API.Data;
+﻿using Core.Interfaces;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace API
@@ -14,6 +15,7 @@ namespace API
         // This method gets called by the runtime. Use this method to add serices to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
         }
