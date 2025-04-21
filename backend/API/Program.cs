@@ -1,5 +1,5 @@
 using API;
-using API.Data;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 
