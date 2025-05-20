@@ -10,7 +10,7 @@ namespace Core.Specifications
 {
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId) 
+        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId, int? skip = null, int? take = null) 
             : base(x => 
                 (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
             )
@@ -36,12 +36,26 @@ namespace Core.Specifications
                 }
 
             }
+            if (skip.HasValue && take.HasValue)
+            {
+                ApplyPaging(skip.Value, take.Value);
+            }
         }
 
         public ProductsWithTypesAndBrandsSpecification(int id) : base(x => x.Id == id)
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
+        }
+    }
+
+    public class ProductsWithTypesAndBrandsForCountSpecification : BaseSpecification<Product>
+    {
+        public ProductsWithTypesAndBrandsForCountSpecification(int? brandId, int? typeId)
+            : base(x =>
+                (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
+            )
+        {
         }
     }
 }
