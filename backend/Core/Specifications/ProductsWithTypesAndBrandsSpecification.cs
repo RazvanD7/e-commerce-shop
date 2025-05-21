@@ -10,8 +10,9 @@ namespace Core.Specifications
 {
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId, int? skip = null, int? take = null) 
+        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId, string? search, int? skip = null, int? take = null) 
             : base(x => 
+                (string.IsNullOrEmpty(search) || x.Name.ToLower().Contains(search.ToLower())) &&
                 (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
             )
         {
@@ -51,8 +52,9 @@ namespace Core.Specifications
 
     public class ProductsWithTypesAndBrandsForCountSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsForCountSpecification(int? brandId, int? typeId)
+        public ProductsWithTypesAndBrandsForCountSpecification(int? brandId, int? typeId, string? search)
             : base(x =>
+                (string.IsNullOrEmpty(search) || x.Name.ToLower().Contains(search.ToLower())) &&
                 (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
             )
         {

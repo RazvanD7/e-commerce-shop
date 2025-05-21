@@ -27,11 +27,11 @@ namespace API.Controllers
 
         [HttpGet]
         public async Task<ActionResult<API.Helpers.Pagination<ProductToReturnDto>>> GetProducts(
-            string? sort, int? brandId, int? typeId, int pageIndex = 1, int pageSize = 6)
+            string? sort, int? brandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 6)
         {
             var skip = pageSize * (pageIndex - 1);
-            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId, skip, pageSize);
-            var countSpec = new ProductsWithTypesAndBrandsForCountSpecification(brandId, typeId);
+            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId, search, skip, pageSize);
+            var countSpec = new ProductsWithTypesAndBrandsForCountSpecification(brandId, typeId, search);
 
             var totalItems = (await _productsRepo.ListAsync(countSpec)).Count;
             var products = await _productsRepo.ListAsync(spec);
