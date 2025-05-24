@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { response } from 'express';
 import { IProduct } from '../shared/models/product';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class BasketService {
   private basketTotalSource = new BehaviorSubject<IBasketTotals>({shipping: 0, total: 0, subtotal: 0});
   basketTotal$ = this.basketTotalSource.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   getBasket(id: string){
     return this.http.get<IBasket>(this.baseUrl + 'basket?id=' + id)
@@ -95,7 +96,9 @@ export class BasketService {
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe(() => {
       this.basketSource.next(new Basket());
       this.basketTotalSource.next({shipping: 0, total: 0, subtotal: 0});
-      localStorage.removeItem('basket_id');
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.removeItem('basket_id');
+      }
     }, error => {
       console.log(error);
     })
@@ -111,7 +114,12 @@ export class BasketService {
 
   private createBasket(): IBasket {
     const basket = new Basket();
-    localStorage.setItem('basket_id',basket.id);
+    console.log('Creating new basket with ID:', basket.id);
+    if (isPlatformBrowser(this.platformId)) {
+      console.log('Attempting to save basket ID to localStorage:', basket.id);
+      localStorage.setItem('basket_id',basket.id);
+      console.log('localStorage after setItem:', localStorage.getItem('basket_id'));
+    }
     return basket;
   }
   private mapProductItemToBasketItem(item: IProduct, quantity: number): IBasketItem {

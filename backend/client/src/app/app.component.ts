@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { BasketService } from './basket/basket.service';
-
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +12,18 @@ import { BasketService } from './basket/basket.service';
 export class AppComponent implements OnInit {
   title = 'Shop';
 
-
-  constructor(private basketService: BasketService){}
+  constructor(private basketService: BasketService, @Inject(PLATFORM_ID) private platformId: Object){}
 
   ngOnInit(): void {
-    const basketId = localStorage.getItem('basket_id');
-    if(basketId){
-      this.basketService.getBasket(basketId).subscribe(() => {
-        console.log('initialised basket');
-      }, error => {
-        console.log(error);
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      const basketId = localStorage.getItem('basket_id');
+      if(basketId){
+        this.basketService.getBasket(basketId).subscribe(() => {
+          console.log('initialised basket');
+        }, error => {
+          console.log(error);
+        });
+      }
     }
   }
 }
