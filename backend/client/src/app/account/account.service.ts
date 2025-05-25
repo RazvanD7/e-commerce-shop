@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import { BehaviorSubject, map, ReplaySubject, tap, catchError, of } from 'rxjs';
 import { IUser } from '../shared/models/user';
 import { Router } from '@angular/router';
 
@@ -11,27 +11,37 @@ export class AccountService {
   baseUrl= 'https://localhost:5202/api/';
   private currentUserSource = new BehaviorSubject<IUser | undefined>(undefined);
   currentUser$ = this.currentUserSource.asObservable();
+  private rpSource = new ReplaySubject<IUser>(1);
+  rp$ = this.rpSource.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  getCurrentUserValue()
-  {
-    return this.currentUserSource.value;
-  }
-
-  loadCurrentUser(token: string)
-  {
+  loadCurrentUser(token: string | null) {
+    if(token === null)
+    {
+      this.currentUserSource.next(undefined);
+      return of(undefined);
+    }
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
+
     return this.http.get<IUser>(this.baseUrl + 'account', {headers}).pipe(
-      map((user: IUser) => {
+      map(user => {
         if(user){
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
+        } else {
+          this.currentUserSource.next(undefined);
         }
+        return user;
+      }),
+      catchError(error => {
+        console.log(error);
+        localStorage.removeItem('token');
+        this.currentUserSource.next(undefined);
+        return of(undefined);
       })
     );
-
   }
 
   login(value: any){
