@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, ReplaySubject, tap, catchError, of, Observable } from 'rxjs';
-import { IUser } from '../shared/models/user';
+import { Address,IUser } from '../shared/models/user';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -76,6 +76,10 @@ export class AccountService {
   {
     return this.http.get(this.baseUrl + '/account/emailexists?email=' + email);
   }
+  updateUserAddress(address: Address) {
+    return this.http.put(this.baseUrl + 'account/address', address);
+  }
+
 
   
 }

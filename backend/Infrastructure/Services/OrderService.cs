@@ -1,7 +1,6 @@
 ﻿using Core.Entities;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
-using Core.Specifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,11 +39,7 @@ namespace Infrastructure.Services
 
             var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal);
 
-            order.PaymentIntentId = string.Empty;
-
             _unitOfWork.Repository<Order>().Add(order);
-
-            
 
             var result = await _unitOfWork.Complete();
 
@@ -55,23 +50,19 @@ namespace Infrastructure.Services
             return order;
         }
 
-        public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
+        public Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
         {
-            return await _unitOfWork.Repository<DeliveryMethod>().ListAllAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
+        public Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
         {
-            var spec = new OrdersWithItemsAndOrderingSpecification(id, buyerEmail);
-
-            return await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+            throw new NotImplementedException();
         }
 
-        public async Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
+        public Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
-            var spec = new OrdersWithItemsAndOrderingSpecification(buyerEmail);
-
-            return await _unitOfWork.Repository<Order>().ListAsync(spec);
+            throw new NotImplementedException();
         }
     }
 }
