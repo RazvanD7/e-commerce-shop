@@ -40,10 +40,11 @@ namespace Infrastructure.Services
 
             var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal);
 
-            // Assign a value to PaymentIntentId before saving
-            order.PaymentIntentId = string.Empty; // Or assign the actual ID if available at this point
+            order.PaymentIntentId = string.Empty;
 
             _unitOfWork.Repository<Order>().Add(order);
+
+            
 
             var result = await _unitOfWork.Complete();
 
