@@ -112,7 +112,7 @@ export class BasketService {
     this.basketTotalSource.next({shipping,total,subtotal});
   }
 
-  private createBasket(): IBasket {
+  public createBasket(): IBasket {
     const basket = new Basket();
     console.log('Creating new basket with ID:', basket.id);
     if (isPlatformBrowser(this.platformId)) {
