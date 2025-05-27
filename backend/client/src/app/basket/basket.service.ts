@@ -5,6 +5,7 @@ import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/ba
 import { response } from 'express';
 import { IProduct } from '../shared/models/product';
 import { isPlatformBrowser } from '@angular/common';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,15 @@ export class BasketService {
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>({shipping: 0, total: 0, subtotal: 0});
   basketTotal$ = this.basketTotalSource.asObservable();
+  shipping = 0;
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
+
+  setShippingPrice(deliveryMethod: IDeliveryMethod)
+  {
+    this.shipping = deliveryMethod.price;
+    this.calculateTotal();
+  }
 
   getBasket(id: string){
     return this.http.get<IBasket>(this.baseUrl + 'basket?id=' + id)
@@ -106,7 +114,7 @@ export class BasketService {
 
   private calculateTotal(){
     const basket = this.getCurrentBasketValue();
-    const shipping = 0;
+    const shipping = this.shipping;
     const subtotal = basket.items.reduce((a,b) => (b.price * b.quantity) + a, 0);
     const total = subtotal + shipping;
     this.basketTotalSource.next({shipping,total,subtotal});
