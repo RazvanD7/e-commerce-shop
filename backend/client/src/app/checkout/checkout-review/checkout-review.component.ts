@@ -23,7 +23,6 @@ ngOnInit(): void {
 
 createPaymentIntent(){
   return this.basketService.createPaymentIntent().subscribe((response: any) => {
-    this.toastr.success('Payment intent success');
     this.appStepper.next();
   }, error => {
     console.log(error);
