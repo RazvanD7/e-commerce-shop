@@ -1,11 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { firstValueFrom } from 'rxjs';
+import { BasketService } from '../../basket/basket.service';
+import { Basket, IBasket } from '../../shared/models/basket';
+import { IOrder, IOrderToCreate } from '../../shared/models/order';
+import { Address } from '../../shared/models/user';
+import { CheckoutService } from '../checkout.service';
 
 @Component({
   selector: 'app-checkout-payment',
   standalone: false,
   templateUrl: './checkout-payment.component.html',
-  styleUrl: './checkout-payment.component.scss'
+  styleUrls: ['./checkout-payment.component.scss']
 })
-export class CheckoutPaymentComponent {
+export class CheckoutPaymentComponent implements OnInit {
+  @Input() checkoutForm?: FormGroup;
 
+  constructor(private basketService: BasketService, private checkoutService: CheckoutService, 
+      private toastr: ToastrService, private router: Router) {}
+
+  ngOnInit(): void {
+       
+  }
+
+
+  async submitOrder() {
+    const basket = this.basketService.getCurrentBasketValue();
+    const orderToCreate = this.getOrderToCreate(basket);
+    this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
+      this.toastr.success('Order created successfully');
+      this.basketService.deleteLocalBasket();
+      const navigationExtras: NavigationExtras = {state: order};
+      this.router.navigate(['checkout/success'], navigationExtras)
+    }, error => {
+      this.toastr.error(error.message);
+      console.log(error);
+    })
+  }
+
+  private getOrderToCreate(basket: IBasket){
+    return{
+      basketId: basket.id,
+      deliveryMethodId: + this.checkoutForm?.get('deliveryForm')?.get('deliveryMethod')?.value,
+      shipToAddress: this.checkoutForm?.get('addressForm')?.value
+    }
+   
+  }
 }

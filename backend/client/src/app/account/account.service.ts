@@ -78,7 +78,7 @@ export class AccountService {
     return this.http.get(this.baseUrl + '/account/emailexists?email=' + email);
   }
   updateUserAddress(address: IAddress) {
-    return this.http.put(this.baseUrl + 'account/address', address);
+    return this.http.post<IAddress>(this.baseUrl + 'account/address', address);
   }
 
   getUserAddress(){

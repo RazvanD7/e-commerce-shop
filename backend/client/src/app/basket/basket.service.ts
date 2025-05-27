@@ -141,4 +141,9 @@ export class BasketService {
       type: item.productType
     }
   }
+  deleteLocalBasket() {
+    this.basketSource.next(new Basket());
+    this.basketTotalSource.next({shipping: 0, total: 0, subtotal: 0});
+    localStorage.removeItem('basket_id');
+  }
 }
