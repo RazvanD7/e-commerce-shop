@@ -16,9 +16,7 @@ import { OrderDetailedComponent } from './orders/order-detailed/order-detailed.c
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OrdersComponent,
-    OrderDetailedComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
