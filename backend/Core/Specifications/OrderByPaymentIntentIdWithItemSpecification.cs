@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Core.Specifications
 {
-    public class OrderByPaymentIntentIdWithItemSpecification : BaseSpecification<Order>
+    public class OrderByPaymentIntentIdSpecification : BaseSpecification<Order>
     {
 
-        public OrderByPaymentIntentIdWithItemSpecification(string paymentIntentId) : base(o => o.PaymentIntentId == paymentIntentId)
+        public OrderByPaymentIntentIdSpecification(string paymentIntentId) : base(o => o.PaymentIntentId == paymentIntentId)
         {
         }
     }
