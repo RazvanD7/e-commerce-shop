@@ -6,14 +6,14 @@
                                     <th class="border-0" scope="col" [class.bg-light]="isBasket">
                                         <div class="p-2 px-3 text-uppercase">Product</div>
                                     </th>
-                                    <th class="border-0" scope="col">
-                                        <div class="py-2 text-uppercase" [class.bg-light]="isBasket">Price</div>
+                                    <th class="border-0" scope="col" [class.bg-light]="isBasket">
+                                        <div class="py-2 text-uppercase" >Price</div>
                                     </th>
-                                    <th class="border-0" scope="col">
-                                        <div class="py-2 text-uppercase" [class.bg-light]="isBasket">Quantity</div>
+                                    <th class="border-0" scope="col" [class.bg-light]="isBasket">
+                                        <div class="py-2 text-uppercase">Quantity</div>
                                     </th>
-                                    <th class="border-0" scope="col">
-                                        <div class="py-2 text-uppercase" [class.bg-light]="isBasket">Total</div>
+                                    <th class="border-0" scope="col" [class.bg-light]="isBasket">
+                                        <div class="py-2 text-uppercase">Total</div>
                                     </th>
                                     <th *ngIf="isBasket" class="border-0 bg-light" scope="col">
                                         <div class="py-2 text-uppercase">Remove</div>
@@ -34,11 +34,11 @@
                                         </div>
                                     </th>
                                     <td class="align-middle"><strong>{{item.price | currency}}</strong></td>
-                                    <td class="align-middle">
-                                        <div class="d-flex align-items-center" [class.justify-content-center]="!isBasket">
-                                            <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
-        <span class="font-weight-bold" style="font-size: 1.5em;">{{item.quantity}}</span>
-        <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
+                                    <td class="align-middle" [style.textAlign]="!isBasket ? 'center' : ''">
+                                        <div class="d-flex align-items-center">
+                                            <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning" style="cursor: pointer; font-size: 2em;" [style.marginRight]="isBasket ? '4px' : '0'"></i>
+                                            <span class="font-weight-bold basket-quantity-number align-middle" style="font-size: 1.5em;">{{item.quantity}}</span>
+                                            <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus-circle text-warning" style="cursor: pointer; font-size: 2em;" [style.marginLeft]="isBasket ? '4px' : '0'"></i>
                                         </div>
                                     </td>
                                     <td class="align-middle"><strong>{{(item.price * item.quantity) | currency}}</strong></td>

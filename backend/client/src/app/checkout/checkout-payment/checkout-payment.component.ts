@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -8,6 +8,7 @@ import { Basket, IBasket } from '../../shared/models/basket';
 import { IOrder, IOrderToCreate } from '../../shared/models/order';
 import { Address } from '../../shared/models/user';
 import { CheckoutService } from '../checkout.service';
+import { isPlatformBrowser } from '@angular/common';
 
 
 declare var Stripe: any;
@@ -34,8 +35,8 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   cardExpiryValid = false;
   cardCvcValid = false;
 
-  constructor(private basketService: BasketService, private checkoutService: CheckoutService, 
-      private toastr: ToastrService, private router: Router) {}
+  constructor(private basketService: BasketService, private checkoutService: CheckoutService,
+      private toastr: ToastrService, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {
        this.stripe = Stripe('pk_test_51RTM2dQcjXsF1HJgNsRPyCHpgUzbmKsgEsaWeZ5UVMoJts1eaC0FETFajScIkxIeR6nXGYQEEmruer8miVRZi3VT00qYoj3w11');
@@ -55,9 +56,11 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.cardNumber.destroy();
-    this.cardExpiry.destroy();
-    this.cardCvc.destroy();
+    if (isPlatformBrowser(this.platformId)) {
+      this.cardNumber.destroy();
+      this.cardExpiry.destroy();
+      this.cardCvc.destroy();
+    }
   }
 
   onChange(event) {

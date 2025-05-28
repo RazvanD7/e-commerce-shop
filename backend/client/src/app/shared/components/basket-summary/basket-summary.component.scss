@@ -1,0 +1,33 @@
+.table thead th {
+    width: 20%; // Default width for all headers
+}
+
+.table tbody td,
+.table tbody th {
+     width: 20%; // Default width for all data cells
+}
+
+.table thead th:first-child {
+    width: 40%; // Wider for product name
+}
+
+.table tbody td:first-child,
+.table tbody th:first-child {
+    width: 40%; // Wider for product details
+}
+
+.table thead th:last-child {
+    width: 15%; // Adjust as needed for "Remove"
+}
+
+.table tbody td:last-child {
+     width: 15%; // Adjust as needed for remove button column
+}
+
+.basket-quantity-number {
+    display: inline-block; // Keep display as block/inline-block
+}
+
+.basket-spacing {
+    margin: 0 5px; // Add horizontal margin for spacing between icons
+}

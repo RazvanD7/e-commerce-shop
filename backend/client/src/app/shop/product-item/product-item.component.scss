@@ -3,10 +3,18 @@
     height: 40px;
 }
 
-.image :hover{
+.image:hover {
     opacity: 1;
-    & button{
-        transform: none;
+    .hover-overlay {
+        opacity: 1;
+    }
+    .hover-overlay > button:first-of-type {
+        transform: translateX(-5px);
+    }
+    .hover-overlay > button:last-of-type {
+        transform: translateX(5px);
+    }
+    .hover-overlay button{
         opacity: 1;
     }
 }
