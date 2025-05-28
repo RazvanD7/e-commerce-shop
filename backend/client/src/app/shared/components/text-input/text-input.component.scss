@@ -56,26 +56,15 @@
   color: #777;
 }
 
-/* Fallback for Edge */
-@supports (-ms-ime-align: auto) {
-  .form-label-group > label {
-    display: none;
-  }
+/* Use the standard forced-colors media query instead of deprecated -ms-high-contrast */
+@media (forced-colors: active) {
+    .form-label-group > label {
+        display: none;
+    }
 
-  .form-label-group input::-ms-input-placeholder {
-    color: #777;
-  }
-}
-
-/* Fallback for IE */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .form-label-group > label {
-    display: none;
-  }
-
-  .form-label-group input:-ms-input-placeholder {
-    color: #777;
-  }
+    .form-label-group input::placeholder {
+        color: #777;
+    }
 }
 
 .loader{
