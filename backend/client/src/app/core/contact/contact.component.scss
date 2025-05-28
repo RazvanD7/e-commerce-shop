@@ -1,0 +1,23 @@
+.container {
+  max-width: 800px; /* Limit content width */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+}
+
+h1 {
+  color: #333; /* Darken the heading color */
+  margin-bottom: 20px; /* Add space below heading */
+}
+
+p {
+  margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+a {
+  color: #007bff; /* Bootstrap primary blue for link */
+  text-decoration: none; /* Remove underline from link */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
