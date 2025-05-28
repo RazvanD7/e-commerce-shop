@@ -1,6 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { BasketService } from './basket/basket.service';
-import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AccountService } from './account/account.service';
 
@@ -20,14 +19,15 @@ export class AppComponent implements OnInit {
     this.loadCurrentUser();
   }
   loadCurrentUser(){
-    const token = localStorage.getItem('token');
+    if (isPlatformBrowser(this.platformId)) {
+      const token = localStorage.getItem('token');
 
       this.accountService.loadCurrentUser(token).subscribe(() => {
         console.log('loaded user');
       }, error => {
         console.log(error);
       })
-    
+    }
   }
 
   loadBasket(){
