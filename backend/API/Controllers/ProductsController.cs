@@ -7,6 +7,7 @@ using Core.Specifications;
 using API.Dtos;
 using AutoMapper;
 using API.Errors;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -24,7 +25,7 @@ namespace API.Controllers
             _productTypeRepo = productTypeRepo;
             _mapper = mapper;
         }
-
+        [Cached(60)]
         [HttpGet]
         public async Task<ActionResult<API.Helpers.Pagination<ProductToReturnDto>>> GetProducts(
             string? sort, int? brandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 6)
@@ -40,6 +41,7 @@ namespace API.Controllers
 
             return Ok(new API.Helpers.Pagination<ProductToReturnDto>(pageIndex, pageSize, totalItems, data));
         }
+        [Cached(60)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -54,12 +56,13 @@ namespace API.Controllers
             return _mapper.Map<Product, ProductToReturnDto>(product);
 
         }
+        [Cached(60)]
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
             return Ok(await _productBrandRepo.ListAllAsync());
         }
-
+        [Cached(60)]
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
         {
