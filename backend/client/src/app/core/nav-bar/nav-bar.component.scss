@@ -4,7 +4,7 @@
     min-height: 20px;
     border-radius: 50%;
     font-size: 0.85em;
-    background: blueviolet;
+    background: rgb(146, 22, 17);
     color: white;
     text-align: center;
     top: -8px;
@@ -32,7 +32,7 @@ a{
     color: #343a40;
     
     &.active{
-        color: orange;
+        color: rgb(146, 22, 17);
     }
 }
 .logo{

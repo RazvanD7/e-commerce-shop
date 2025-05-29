@@ -2,6 +2,7 @@ button.nav-link {
   background: #e9ecef;
   border-radius: 0;
   border: none;
+  margin: 0 !important;
 
   &:focus {
     outline: none;
@@ -25,4 +26,20 @@ button.nav-link {
 
 button.nav-link:not(.active) {
   background: #e9ecef;
+}
+
+.nav-item {
+  padding: 0 !important;
+}
+
+.d-grid {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+ul.nav-justified li.nav-item {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

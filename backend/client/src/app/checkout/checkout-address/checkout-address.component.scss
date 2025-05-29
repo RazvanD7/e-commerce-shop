@@ -1,0 +1,9 @@
+.save-address-button {
+  color: rgb(146, 22, 17); // Set the desired text color
+  border-color: rgb(146, 22, 17); // Set the desired border color
+
+  &:hover {
+    background-color: rgb(146, 22, 17); // Fill with color on hover
+    color: #fff; // White text on hover
+  }
+}
