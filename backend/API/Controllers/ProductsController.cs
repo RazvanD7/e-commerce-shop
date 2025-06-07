@@ -28,7 +28,7 @@ namespace API.Controllers
         [Cached(60)]
         [HttpGet]
         public async Task<ActionResult<API.Helpers.Pagination<ProductToReturnDto>>> GetProducts(
-            string? sort, int? bandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 6)
+            string? sort, int? bandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 12)
         {
             var skip = pageSize * (pageIndex - 1);
             var spec = new ProductsWithTypesAndBandsSpecification(sort, bandId, typeId, search, skip, pageSize);

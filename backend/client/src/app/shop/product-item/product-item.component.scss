@@ -1,46 +1,47 @@
-.btn{
-    width: 30%;
-    height: 40px;
+
+.btn {
+  height: 40px;
+  padding: 0 1rem;         
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  min-width: 80px;          
+  line-height: 1;           
 }
 
-.image:hover {
-    opacity: 1;
-    .hover-overlay {
-        opacity: 1;
-    }
-    .hover-overlay > button:first-of-type {
-        transform: translateX(-5px);
-    }
-    .hover-overlay > button:last-of-type {
-        transform: translateX(5px);
-    }
-    .hover-overlay button{
-        opacity: 1;
-    }
+.hover-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.5);
+  opacity: 0;
+  transition: all 0.5s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;              
+
+
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.hover-overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(255,255,255,0.5);
-    opacity: 0;
-    transition: all 0.5s;
-
-    & button{
-        z-index: 1000;
-        transition: all 0.5s;
-    }
-    & button:first-of-type{
-        transform: translateX(-20px);
-    }
-    & button:last-of-type{
-        transform: translateX(20px);
-    }
+.image:hover .hover-overlay {
+  opacity: 1;
 }
-
-.image img {
-    background-color: #e9ecef;
+.image:hover .hover-overlay > button:first-of-type {
+  transform: translateX(7px);
+}
+.image:hover .hover-overlay > button:last-of-type {
+  transform: translateX(-7px);
+}
+.hover-overlay button {
+  opacity: 1;
+  transition: all 0.5s;
+  z-index: 1000;
 }
