@@ -1,7 +1,7 @@
 <div class="mt-4"[formGroup]="checkoutForm">
     <div class="d-flex justify-content-between align-items-center">
         <h4>Shipping address</h4>
-        <button class="btn mb-3 save-address-button" (click)="saveUserAddress()" [disabled]="!checkoutForm.get('addressForm')?.valid || 
+        <button class="btn mb-3 btn-outline-primary save-address-button" (click)="saveUserAddress()" [disabled]="!checkoutForm.get('addressForm')?.valid || 
                 !checkoutForm.get('addressForm')?.dirty"
 
             

@@ -24,7 +24,6 @@ export class BasketService {
     return this.http.post<IBasket>(this.baseUrl + 'payments/' + this.getCurrentBasketValue().id, {}).pipe(
       map((basket: IBasket) => {
         this.basketSource.next(basket);
-        console.log(this.getCurrentBasketValue());
       })
     );
   }
@@ -67,10 +66,9 @@ export class BasketService {
     const itemToAdd: IBasketItem = this.mapProductItemToBasketItem(item, quantity);
     let basket = this.getCurrentBasketValue();
 
-    // Check if there is a basket ID in localStorage, if not, create a new basket
     if (isPlatformBrowser(this.platformId) && !localStorage.getItem('basket_id')) {
         basket = this.createBasket();
-    } else if (!basket) { // Fallback if not in browser or localStorage check fails for some reason
+    } else if (!basket) { 
         basket = this.createBasket();
     }
     basket.items = this.addOrUpdateItem(basket.items, itemToAdd, quantity);
@@ -142,11 +140,8 @@ export class BasketService {
 
   public createBasket(): IBasket {
     const basket = new Basket();
-    console.log('Creating new basket with ID:', basket.id);
     if (isPlatformBrowser(this.platformId)) {
-      console.log('Attempting to save basket ID to localStorage:', basket.id);
       localStorage.setItem('basket_id',basket.id);
-      console.log('localStorage after setItem:', localStorage.getItem('basket_id'));
     }
     this.setBasket(basket);
     return basket;
