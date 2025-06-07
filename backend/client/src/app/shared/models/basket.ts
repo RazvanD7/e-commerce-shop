@@ -15,7 +15,7 @@ export interface IBasketItem {
   price: number
   quantity: number
   pictureUrl: string
-  brand: string
+  band: string
   type: string
 }
 

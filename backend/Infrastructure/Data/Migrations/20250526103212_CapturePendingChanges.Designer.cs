@@ -124,7 +124,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProductBrandId")
+                    b.Property<int>("ProductBandId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ProductTypeId")
@@ -132,14 +132,14 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductBrandId");
+                    b.HasIndex("ProductBandId");
 
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Core.Entities.ProductBrand", b =>
+            modelBuilder.Entity("Core.Entities.Band", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -151,7 +151,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductBrands");
+                    b.ToTable("ProductBands");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductType", b =>
@@ -257,9 +257,9 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
-                    b.HasOne("Core.Entities.ProductBrand", "ProductBrand")
+                    b.HasOne("Core.Entities.Band", "Band")
                         .WithMany()
-                        .HasForeignKey("ProductBrandId")
+                        .HasForeignKey("ProductBandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -269,7 +269,7 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProductBrand");
+                    b.Navigation("Band");
 
                     b.Navigation("ProductType");
                 });

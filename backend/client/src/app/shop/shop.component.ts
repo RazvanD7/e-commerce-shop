@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IProduct } from '../shared/models/product';
 import { ShopService } from './shop.service';
-import { IBrand } from '../shared/models/brand';
+import { IBand } from '../shared/models/band';
 import { IType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
 
@@ -14,7 +14,7 @@ import { ShopParams } from '../shared/models/shopParams';
 export class ShopComponent implements OnInit {
   @ViewChild('search', {static: false}) searchTerm: ElementRef;
   products: IProduct[];
-  brands: IBrand[];
+  bands: IBand[];
   types: IType[];
   shopParams: ShopParams;
   totalCount: number;
@@ -29,7 +29,7 @@ export class ShopComponent implements OnInit {
   }
   ngOnInit(){
    this.getProducts(true);
-   this.getBrands();
+   this.getBands();
    this.getTypes();
   }
 
@@ -42,10 +42,10 @@ export class ShopComponent implements OnInit {
       console.log(error);
     });
   }
-  getBrands()
+  getBands()
   {
-    this.shopService.getBrands().subscribe(response => {
-      this.brands = [{id: 0, name: 'All'}, ...response];
+    this.shopService.getBands().subscribe(response => {
+      this.bands = [{id: 0, name: 'All'}, ...response];
     
     }, error => {
       console.log(error);
@@ -62,9 +62,9 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  onBrandSelected(brandId: number){
+  onBandSelected(bandId: number){
     const params = this.shopService.getShopParams();
-    params.brandId = brandId;
+    params.bandId = bandId;
     params.pageNumber =1;
     this.shopService.setShopParams(params);
     this.getProducts();

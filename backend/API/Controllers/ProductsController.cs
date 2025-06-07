@@ -14,11 +14,11 @@ namespace API.Controllers
     public class ProductsController: BaseApiController
     {
         private readonly IGenericRepository<Product> _productsRepo;
-        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+        private readonly IGenericRepository<ProductBand> _productBrandRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
         private readonly IMapper _mapper;
 
-        public ProductsController(IGenericRepository<Product> productsRepo, IGenericRepository<ProductBrand> productBrandRepo, IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
+        public ProductsController(IGenericRepository<Product> productsRepo, IGenericRepository<ProductBand> productBrandRepo, IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
         {
             _productsRepo = productsRepo;
             _productBrandRepo = productBrandRepo;
@@ -28,11 +28,11 @@ namespace API.Controllers
         [Cached(60)]
         [HttpGet]
         public async Task<ActionResult<API.Helpers.Pagination<ProductToReturnDto>>> GetProducts(
-            string? sort, int? brandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 6)
+            string? sort, int? bandId, int? typeId, string? search, int pageIndex = 1, int pageSize = 6)
         {
             var skip = pageSize * (pageIndex - 1);
-            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId, search, skip, pageSize);
-            var countSpec = new ProductsWithTypesAndBrandsForCountSpecification(brandId, typeId, search);
+            var spec = new ProductsWithTypesAndBandsSpecification(sort, bandId, typeId, search, skip, pageSize);
+            var countSpec = new ProductsWithTypesAndBandsForCountSpecification(bandId, typeId, search);
 
             var totalItems = (await _productsRepo.ListAsync(countSpec)).Count;
             var products = await _productsRepo.ListAsync(spec);
@@ -47,7 +47,7 @@ namespace API.Controllers
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var spec = new ProductsWithTypesAndBandsSpecification(id);
 
            var product = await _productsRepo.GetEntityWithSpec(spec);
 
@@ -57,8 +57,8 @@ namespace API.Controllers
 
         }
         [Cached(60)]
-        [HttpGet("brands")]
-        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        [HttpGet("bands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBand>>> GetProductBands()
         {
             return Ok(await _productBrandRepo.ListAllAsync());
         }

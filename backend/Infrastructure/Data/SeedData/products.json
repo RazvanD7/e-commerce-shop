@@ -1,146 +1,322 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "Name": "Vinyl: Jar of Flies",
+    "Description": "Jar of Flies is the third studio EP by American rock band Alice in Chains. It was released on January 25, 1994, by Columbia Records. The band's second acoustic EP, after 1992's Sap, it was the first acoustic EP in music history to debut at No. 1 on the Billboard 200 chart, with the first week sales exceeding 141,000 copies in the United States.",
+    "Price": 20,
+    "PictureUrl": "images/products/jar_of_flies.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 1
+    "ProductBandId": 1
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 5
-  },
-  {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Vinyl: Alice In Chains",
+    "Description": "Alice in Chains (sometimes informally referred to as the Dog Album or Tripod) is the third studio album by American rock band Alice in Chains. It was released on October 31, 1995, by Columbia Records, and was the full-length follow-up to the group's commercial breakthrough Dirt (1992). This is the band's first studio album to feature bassist Mike Inez, their last to feature original lead vocalist Layne Staley, and their final studio album to be released through Columbia.",
     "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "PictureUrl": "images/products/Alice_In_Chains.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 1
   },
   {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Name": "Vinyl: Dirt",
+    "Description": "Dirt is the second studio album by American rock band Alice in Chains, released on September 29, 1992, by Columbia Records. It was the band's last album recorded with all four original members, as bassist Mike Starr was fired in January 1993 during the tour to support the album.",
     "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "PictureUrl": "images/products/Dirt.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 1
   },
   {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "Vinyl: Facelift",
+    "Description": "Facelift is the debut studio album by the American rock band Alice in Chains, released by Columbia Records on August 28, 1990.",
+    "Price": 30,
+    "PictureUrl": "images/products/Facelift.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "Vinyl: The Devil Put Dinosaurs Here",
+    "Description": "The Devil Put Dinosaurs Here is the fifth studio album by American rock band Alice in Chains, released on May 28, 2013, through Capitol Records, the band's final album released through the label",
+    "Price": 25,
+    "PictureUrl": "images/products/The_Devil_Put_Dinosaurs_Here.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "Vinyl: Unplugged",
+    "Description": "Unplugged is a live album by the American rock band Alice in Chains, released on July 30, 1996, by Columbia Records. It was recorded on April 10, 1996, at the Brooklyn Academy of Music's Majestic Theatre for the television series MTV Unplugged. The show was directed by Joe Perota and first aired on MTV on May 28, 1996. Home video releases of the MTV broadcast were released on VHS in October 1996, and on DVD in October 1999. The MTV Unplugged was Alice in Chains' first concert in two and a half years, and contains live, acoustic versions of the band's biggest hits along with lesser-known songs.",
+    "Price": 12,
+    "PictureUrl": "images/products/Unplugged.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "Vinyl: Bleach",
+    "Description": "Bleach is the debut studio album by American rock band Nirvana, released on June 15, 1989, by Sub Pop.",
+    "Price": 23,
+    "PictureUrl": "images/products/Bleach.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "Vinyl: In Utero",
+    "Description": "In Utero is the third and final studio album by the American rock band Nirvana, released on September 21, 1993, by DGC Records.",
+    "Price": 26,
+    "PictureUrl": "images/products/In_Utero.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "Vinyl: Live at Reading",
+    "Description": "Live at Reading is a live CD/DVD by American rock band Nirvana, released on November 2, 2009. It features the band's headlining performance at the Reading Festival in Reading, England, on August 30, 1992. Bootlegged for years, the new issues present the performance for the first time mastered and color corrected.",
     "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "PictureUrl": "images/products/Live_at_Reading.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
   },
   {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
+    "Name": "Vinyl: Live At The Paramount",
+    "Description": "Live at the Paramount is a live video and album by American rock band Nirvana, released on September 24, 2011. It was released on DVD and Blu-ray Disc as part of the 20th anniversary of the band's second album and mainstream breakthrough, Nevermind.",
+    "Price": 18,
+    "PictureUrl": "images/products/Live_At_The_Paramount.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
   },
   {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "Vinyl: MTV Unplugged In New York",
+    "Description": "MTV Unplugged in New York is the first live album by the American rock band Nirvana, released by DGC Records on November 1, 1994, nearly seven months following the suicide of Kurt Cobain. It was part of the cable television series MTV Unplugged and features a mostly acoustic performance. It was recorded at Sony Music Studios in Hell's Kitchen, Manhattan, on November 18, 1993.",
+    "Price": 30,
+    "PictureUrl": "images/products/MTV_Unplugged_In_New_York.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "Vinyl: Nevermind",
+    "Description": "Nevermind is the second studio album by the American rock band Nirvana, released on September 24, 1991, by DGC Records. It was Nirvana's first release on a major label and the first to feature drummer Dave Grohl. Produced by Butch Vig, Nevermind features a more polished, radio-friendly sound than the band's prior work.",
+    "Price": 20,
+    "PictureUrl": "images/products/Nevermind.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "Vinyl: Seventeen Seconds",
+    "Description": "Seventeen Seconds is the second studio album by English rock band the Cure, released on 18 April 1980 by Fiction Records. The album marked the first time frontman Robert Smith co-produced with Mike Hedges. After the departure of original bassist Michael Dempsey, Simon Gallup became an official member along with keyboardist Matthieu Hartley.",
     "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
+    "PictureUrl": "images/products/resized_cure1.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 3
   },
   {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 6
+    "Name": "Vinyl: Disintegration",
+    "Description": "Disintegration is the eighth studio album by English rock band the Cure, released on 2 May 1989, by Fiction Records. The band recorded the album at Hookend Recording Studios in Checkendon, Oxfordshire, with co-producer David M. Allen from late 1988 to early 1989.",
+    "Price": 25,
+    "PictureUrl": "images/products/resized_cure2.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 3
   },
   {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Name": "Vinyl: Three Imaginary Boys",
+    "Description": "Three Imaginary Boys is the debut studio album by English rock band the Cure, released on 8 May 1979 by Fiction Records,[3] and reached number 44 on the UK Albums Chart. It was later released in the United States, Canada, and Australia with a different track listing as a compilation album titled Boys Don't Cry.",
+    "Price": 18.99,
+    "PictureUrl": "images/products/resized_cure3.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 3
   },
   {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Name": "Vinyl: The Head on the Door",
+    "Description": "The Head on the Door is the sixth studio album by English rock band the Cure. It was released on 30 August 1985 by Fiction Records.",
+    "Price": 19.99,
+    "PictureUrl": "images/products/resized_cure4.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 3
   },
   {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Vinyl: Koi No Yokan",
+    "Description": "Koi No Yokan is the seventh studio album by the American alternative metal band Deftones, released on November 12, 2012, by Reprise Records.",
+    "Price": 15,
+    "PictureUrl": "images/products/resized_deftones1.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 4
   },
   {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Vinyl: Diamond Eyes",
+    "Description": "Diamond Eyes is the sixth studio album by the American alternative metal band Deftones, released on May 4, 2010, by Reprise Records. It was the first album to feature bassist Sergio Vega, who replaced original bassist Chi Cheng.",
+    "Price": 18,
+    "PictureUrl": "images/products/resized_deftones2.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "Vinyl: White Pony",
+    "Description": "White Pony is the third studio album by the American alternative metal band Deftones, released on June 20, 2000, through Maverick Records.",
+    "Price": 38,
+    "PictureUrl": "images/products/resized_deftones3.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "Vinyl: Adrenaline",
+    "Description": "Adrenaline is the debut studio album by the American alternative metal band Deftones, released on October 3, 1995, by Maverick Records.",
+    "Price": 28,
+    "PictureUrl": "images/products/resized_deftones4.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "Vinyl: Superunknown",
+    "Description": "Superunknown is the fourth studio album by American rock band Soundgarden, released on March 8, 1994, through A&M Records.",
+    "Price": 35,
+    "PictureUrl": "images/products/resized_soundgarden1.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 5
+  },
+  {
+    "Name": "Vinyl: Badmotorfinger",
+    "Description": "Badmotorfinger is the third studio album by American rock band Soundgarden, released on October 8, 1991, through A&M Records.",
+    "Price": 26,
+    "PictureUrl": "images/products/resized_soundgarden2.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 5
+  },
+  {
+    "Name": "Vinyl: Telephantasm",
+    "Description": "Telephantasm is a compilation album by the American rock band Soundgarden. Featuring songs that span 23 years of the band's career, it was released on September 28, 2010, through A&M Records.",
+    "Price": 39,
+    "PictureUrl": "images/products/resized_soundgarden3.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 5
+  },
+  {
+    "Name": "Vinyl: Down on the Upside",
+    "Description": "Down on the Upside is the fifth studio album by the American rock band Soundgarden, released on May 21, 1996, through A&M Records.",
+    "Price": 17,
+    "PictureUrl": "images/products/resized_soundgarden4.png",
+    "ProductTypeId": 1,
+    "ProductBandId": 5
+  },
+  {
+    "Name": "CD: Jar of Flies",
+    "Description": "Jar of Flies is the third studio EP by American rock band Alice in Chains. It was released on January 25, 1994, by Columbia Records. The band's second acoustic EP, after 1992's Sap, it was the first acoustic EP in music history to debut at No. 1 on the Billboard 200 chart, with the first week sales exceeding 141,000 copies in the United States.",
+    "Price": 10,
+    "PictureUrl": "images/products/jar_of_flies.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "CD: Alice In Chains",
+    "Description": "Alice in Chains (sometimes informally referred to as the Dog Album or Tripod) is the third studio album by American rock band Alice in Chains. It was released on October 31, 1995, by Columbia Records, and was the full-length follow-up to the group's commercial breakthrough Dirt (1992). This is the band's first studio album to feature bassist Mike Inez, their last to feature original lead vocalist Layne Staley, and their final studio album to be released through Columbia.",
+    "Price": 5,
+    "PictureUrl": "images/products/Alice_In_Chains.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "CD: Dirt",
+    "Description": "Dirt is the second studio album by American rock band Alice in Chains, released on September 29, 1992, by Columbia Records. It was the band's last album recorded with all four original members, as bassist Mike Starr was fired in January 1993 during the tour to support the album.",
+    "Price": 8,
+    "PictureUrl": "images/products/Dirt.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "CD: Unplugged",
+    "Description": "Unplugged is a live album by the American rock band Alice in Chains, released on July 30, 1996, by Columbia Records. It was recorded on April 10, 1996, at the Brooklyn Academy of Music's Majestic Theatre for the television series MTV Unplugged. The show was directed by Joe Perota and first aired on MTV on May 28, 1996. Home video releases of the MTV broadcast were released on VHS in October 1996, and on DVD in October 1999. The MTV Unplugged was Alice in Chains' first concert in two and a half years, and contains live, acoustic versions of the band's biggest hits along with lesser-known songs.",
+    "Price": 6,
+    "PictureUrl": "images/products/Unplugged.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 1
+  },
+  {
+    "Name": "CD: Bleach",
+    "Description": "Bleach is the debut studio album by American rock band Nirvana, released on June 15, 1989, by Sub Pop.",
+    "Price": 3,
+    "PictureUrl": "images/products/Bleach.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "CD: In Utero",
+    "Description": "In Utero is the third and final studio album by the American rock band Nirvana, released on September 21, 1993, by DGC Records.",
+    "Price": 16,
+    "PictureUrl": "images/products/In_Utero.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "CD: Live at Reading",
+    "Description": "Live at Reading is a live CD/DVD by American rock band Nirvana, released on November 2, 2009. It features the band's headlining performance at the Reading Festival in Reading, England, on August 30, 1992. Bootlegged for years, the new issues present the performance for the first time mastered and color corrected.",
+    "Price": 5,
+    "PictureUrl": "images/products/Live_at_Reading.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "CD: Live At The Paramount",
+    "Description": "Live at the Paramount is a live video and album by American rock band Nirvana, released on September 24, 2011. It was released on DVD and Blu-ray Disc as part of the 20th anniversary of the band's second album and mainstream breakthrough, Nevermind.",
+    "Price": 15,
+    "PictureUrl": "images/products/Live_At_The_Paramount.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "CD: MTV Unplugged In New York",
+    "Description": "MTV Unplugged in New York is the first live album by the American rock band Nirvana, released by DGC Records on November 1, 1994, nearly seven months following the suicide of Kurt Cobain. It was part of the cable television series MTV Unplugged and features a mostly acoustic performance. It was recorded at Sony Music Studios in Hell's Kitchen, Manhattan, on November 18, 1993.",
+    "Price": 10,
+    "PictureUrl": "images/products/MTV_Unplugged_In_New_York.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 2
+  },
+  {
+    "Name": "CD: Three Imaginary Boys",
+    "Description": "Three Imaginary Boys is the debut studio album by English rock band the Cure, released on 8 May 1979 by Fiction Records,[3] and reached number 44 on the UK Albums Chart. It was later released in the United States, Canada, and Australia with a different track listing as a compilation album titled Boys Don't Cry.",
+    "Price": 8.99,
+    "PictureUrl": "images/products/resized_cure3.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 3
+  },
+  {
+    "Name": "CD: The Head on the Door",
+    "Description": "The Head on the Door is the sixth studio album by English rock band the Cure. It was released on 30 August 1985 by Fiction Records.",
+    "Price": 9.99,
+    "PictureUrl": "images/products/resized_cure4.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 3
+  },
+  {
+    "Name": "CD: Koi No Yokan",
+    "Description": "Koi No Yokan is the seventh studio album by the American alternative metal band Deftones, released on November 12, 2012, by Reprise Records.",
+    "Price": 5,
+    "PictureUrl": "images/products/resized_deftones1.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "CD: Diamond Eyes",
+    "Description": "Diamond Eyes is the sixth studio album by the American alternative metal band Deftones, released on May 4, 2010, by Reprise Records. It was the first album to feature bassist Sergio Vega, who replaced original bassist Chi Cheng.",
+    "Price": 8,
+    "PictureUrl": "images/products/resized_deftones2.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "CD: White Pony",
+    "Description": "White Pony is the third studio album by the American alternative metal band Deftones, released on June 20, 2000, through Maverick Records.",
+    "Price": 8,
+    "PictureUrl": "images/products/resized_deftones3.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 4
+  },
+  {
+    "Name": "CD: Superunknown",
+    "Description": "Superunknown is the fourth studio album by American rock band Soundgarden, released on March 8, 1994, through A&M Records.",
+    "Price": 5,
+    "PictureUrl": "images/products/resized_soundgarden1.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 5
+  },
+  {
+    "Name": "CD: Badmotorfinger",
+    "Description": "Badmotorfinger is the third studio album by American rock band Soundgarden, released on October 8, 1991, through A&M Records.",
+    "Price": 6,
+    "PictureUrl": "images/products/resized_soundgarden2.png",
+    "ProductTypeId": 2,
+    "ProductBandId": 5
   }
 ]

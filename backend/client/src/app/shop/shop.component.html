@@ -2,7 +2,7 @@
   <div class="row">
 
     <section class="col-3">
-      <ng-container *ngIf="types && brands">
+      <ng-container *ngIf="types && bands">
       <h5 class="shop-sidebar-heading ml-3 mt-4 mb-3">Sort</h5>
       <select
         class="custom-select mb-4"
@@ -13,18 +13,7 @@
         </option>
       </select>
 
-      <h5 class="shop-sidebar-heading ml-3">Brands</h5>
-      <ul class="list-group my-3">
-        <li
-          class="list-group-item"
-          *ngFor="let brand of brands"
-          [class.active]="brand.id === this.shopParams.brandId"
-          [value]="brand.id"
-          (click)="onBrandSelected(brand.id)"
-        >
-          {{ brand.name }}
-        </li>
-      </ul>
+      
       <h5 class="shop-sidebar-heading ml-3">Types</h5>
       <ul class="list-group my-3">
         <li
@@ -35,6 +24,19 @@
           (click)="onTypeSelected(type.id)"
         >
           {{ type.name }}
+        </li>
+      </ul>
+
+      <h5 class="shop-sidebar-heading ml-3">Bands</h5>
+      <ul class="list-group my-3">
+        <li
+          class="list-group-item"
+          *ngFor="let band of bands"
+          [class.active]="band.id === this.shopParams.bandId"
+          [value]="band.id"
+          (click)="onBandSelected(band.id)"
+        >
+          {{ band.name }}
         </li>
       </ul>
       </ng-container>

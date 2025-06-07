@@ -13,7 +13,7 @@ namespace Infrastructure.Data
         }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductBrand> ProductBrands { get; set; }
+        public DbSet<ProductBand> ProductBands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
@@ -22,6 +22,10 @@ namespace Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            // Prevent auto-generation of IDs for ProductBand and ProductType
+            modelBuilder.Entity<ProductBand>().Property(b => b.Id).ValueGeneratedNever();
+            modelBuilder.Entity<ProductType>().Property(t => t.Id).ValueGeneratedNever();
 
             if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {

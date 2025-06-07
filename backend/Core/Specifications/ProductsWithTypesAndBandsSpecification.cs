@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Core.Specifications
 {
-    public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
+    public class ProductsWithTypesAndBandsSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId, string? search, int? skip = null, int? take = null) 
+        public ProductsWithTypesAndBandsSpecification(string sort, int? brandId, int? typeId, string? search, int? skip = null, int? take = null) 
             : base(x => 
                 (string.IsNullOrEmpty(search) || x.Name.ToLower().Contains(search.ToLower())) &&
-                (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
+                (!brandId.HasValue || x.ProductBandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
             )
         {
             AddInclude(x => x.ProductType);
-            AddInclude(x => x.ProductBrand);
+            AddInclude(x => x.Band);
             AddOrderBy(x => x.Name);
 
             if(!string.IsNullOrEmpty(sort))
@@ -43,19 +43,19 @@ namespace Core.Specifications
             }
         }
 
-        public ProductsWithTypesAndBrandsSpecification(int id) : base(x => x.Id == id)
+        public ProductsWithTypesAndBandsSpecification(int id) : base(x => x.Id == id)
         {
             AddInclude(x => x.ProductType);
-            AddInclude(x => x.ProductBrand);
+            AddInclude(x => x.Band);
         }
     }
 
-    public class ProductsWithTypesAndBrandsForCountSpecification : BaseSpecification<Product>
+    public class ProductsWithTypesAndBandsForCountSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsForCountSpecification(int? brandId, int? typeId, string? search)
+        public ProductsWithTypesAndBandsForCountSpecification(int? bandId, int? typeId, string? search)
             : base(x =>
                 (string.IsNullOrEmpty(search) || x.Name.ToLower().Contains(search.ToLower())) &&
-                (!brandId.HasValue || x.ProductBrandId == brandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
+                (!bandId.HasValue || x.ProductBandId == bandId) && (!typeId.HasValue || x.ProductTypeId == typeId)
             )
         {
         }

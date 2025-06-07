@@ -73,7 +73,6 @@ export class BasketService {
     } else if (!basket) { // Fallback if not in browser or localStorage check fails for some reason
         basket = this.createBasket();
     }
-
     basket.items = this.addOrUpdateItem(basket.items, itemToAdd, quantity);
     this.setBasket(basket);
   }
@@ -159,7 +158,7 @@ export class BasketService {
       price: item.price,
       pictureUrl: item.pictureUrl,
       quantity,
-      brand: item.productBrand,
+      band: item.productBand,
       type: item.productType
     }
   }

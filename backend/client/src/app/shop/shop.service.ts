@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPagination, Pagination } from '../shared/models/pagination';
-import { IBrand } from '../shared/models/brand';
+import { IBand } from '../shared/models/band';
 import { IType } from '../shared/models/productType';
 import { map, of } from 'rxjs';
 import { ShopParams } from '../shared/models/shopParams';
@@ -13,7 +13,7 @@ import { IProduct } from '../shared/models/product';
 export class ShopService {
   baseUrl= 'https://localhost:5202/api/';
   products: IProduct[] = [];
-  brands: IBrand[] = [];
+  brands: IBand[] = [];
   types: IType[] = [];
   pagination = new Pagination();
   shopParams = new ShopParams();
@@ -38,9 +38,9 @@ export class ShopService {
 
     let params = new HttpParams();
 
-    if(this.shopParams.brandId !== 0)
+    if(this.shopParams.bandId !== 0)
     {
-      params = params.append('brandId', this.shopParams.brandId.toString());
+      params = params.append('bandId', this.shopParams.bandId.toString());
     }
 
     if(this.shopParams.typeId !== 0)
@@ -85,12 +85,12 @@ export class ShopService {
     return this.shopParams;
   }
 
-  getBrands(){
+  getBands(){
     if(this.brands.length > 0)
     {
       return of(this.brands);
     }
-    return this.http.get<IBrand[]>(this.baseUrl + 'products/brands').pipe(
+    return this.http.get<IBand[]>(this.baseUrl + 'products/bands').pipe(
       map(response => {
         this.brands = response;
         return response;

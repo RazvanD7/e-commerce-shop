@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "Alice in Chains"
+  },
+  {
+    "Id": 2,
+    "Name": "Nirvana"
+  },
+  {
+    "Id": 3,
+    "Name": "The Cure"
+  },
+  {
+    "Id": 4,
+    "Name": "Deftones"
+  },
+  {
+    "Id": 5,
+    "Name": "Soundgarden"
+  }
+]
