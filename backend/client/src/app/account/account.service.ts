@@ -4,12 +4,13 @@ import { BehaviorSubject, map, ReplaySubject, tap, catchError, of, Observable } 
 import { Address,IUser } from '../shared/models/user';
 import { Router } from '@angular/router';
 import { IAddress } from '../shared/models/address';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl= 'https://localhost:5202/api/';
+  baseUrl= environment.apiUrl;
   private currentUserSource = new ReplaySubject<IUser | undefined>(1);
   currentUser$ = this.currentUserSource.asObservable();
 

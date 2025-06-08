@@ -6,12 +6,13 @@ import { response } from 'express';
 import { IProduct } from '../shared/models/product';
 import { isPlatformBrowser } from '@angular/common';
 import { IDeliveryMethod } from '../shared/models/deliveryMethod';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
-  baseUrl = 'https://localhost:5202/api/';
+  baseUrl= environment.apiUrl;
   private basketSource = new BehaviorSubject<IBasket>(new Basket());
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>({shipping: 0, total: 0, subtotal: 0});

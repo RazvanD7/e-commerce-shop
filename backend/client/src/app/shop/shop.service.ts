@@ -3,15 +3,16 @@ import { Injectable } from '@angular/core';
 import { IPagination, Pagination } from '../shared/models/pagination';
 import { IBand } from '../shared/models/band';
 import { IType } from '../shared/models/productType';
-import { map, of } from 'rxjs';
+import { firstValueFrom, map, of } from 'rxjs';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl= 'https://localhost:5202/api/';
+  baseUrl= environment.apiUrl;
   products: IProduct[] = [];
   brands: IBand[] = [];
   types: IType[] = [];
@@ -110,4 +111,13 @@ export class ShopService {
       })
     );
   }
+
+  async getAllProductIds(): Promise<string[]> {
+  const ids = await firstValueFrom(
+    this.http.get<number[]>(`${this.baseUrl}products/ids`)
+  );
+  // convert numbers → strings for SSR prerender type-safety:
+  return ids.map(id => id.toString());
+}
+
 }

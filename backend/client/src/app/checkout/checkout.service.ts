@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import{IDeliveryMethod} from '../shared/models/deliveryMethod';
 import { IOrder, IOrderToCreate } from '../shared/models/order';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
-baseUrl= 'https://localhost:5202/api/';
+baseUrl= environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   getDeliveryMethods(){

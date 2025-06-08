@@ -68,5 +68,14 @@ namespace API.Controllers
         {
             return Ok(await _productTypeRepo.ListAllAsync());
         }
+
+        [Cached(60)]
+        [HttpGet("ids")]
+        public async Task<ActionResult<int[]>> GetProductIds()
+        {
+            var products = await _productsRepo.ListAllAsync();
+            var ids = products.Select(p => p.Id).ToArray();
+            return Ok(ids);
+        }
     }
 }

@@ -4,6 +4,7 @@ using API.Middleware;
 using Infrastructure.Data;
 using Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using StackExchange.Redis;
 
 namespace API
@@ -19,6 +20,8 @@ namespace API
         // This method gets called by the runtime. Use this method to add serices to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -60,7 +63,12 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+        Path.Combine(env.ContentRootPath, "Content")),
+                RequestPath = "/content"
+            });
 
             app.UseCors("CorsPolicy");
 
@@ -69,10 +77,24 @@ namespace API
 
             app.UseSwaggerDocumentation();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            var browserRoot = Path.Combine(env.WebRootPath, "browser");
+            app.UseDefaultFiles(new DefaultFilesOptions
             {
-                endpoints.MapControllers();
+                FileProvider = new PhysicalFileProvider(browserRoot),
+                RequestPath = ""
             });
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(browserRoot),
+                RequestPath = ""
+            });
+
+            // 3) Catch-all: fall back to your FallbackController which now will find browser/index.html
+            app.UseEndpoints(endpoints =>
+                endpoints.MapFallbackToController("Index", "Fallback")
+            );
         }
     }
 }
